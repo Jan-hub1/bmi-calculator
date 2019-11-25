@@ -1,36 +1,137 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
-    <title>Kalkulator BMI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/4.3.1/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/3.4.1/jquery.min.js" th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
+
     <link rel="stylesheet" href="main.css">
+    <title>Kalkulator BMI</title>
+
 </head>
+
 <body>
-<div>Udało się!</div>
+
+    <!-- <form method="post">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Waga</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Podaj swoją wagę">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Wzrost</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Podaj swój wzrost">
+        </div>
+        <div>Płeć</div>
+        <select name="sex">
+            <option value="female">Kobieta</option>
+            <option value="male">Mężczyzna</option>
+
+        </select>
+        <input type="submit" value="OK">
+    </form> -->
 
 
-<!--<form th:action="@{index}" th:object="${person}" method="post">-->
-<!--    <p>Podaj wagę: <input type="text" th:field="*{weight}"/></p>-->
-<!--    <p>Podaj wzrost: <input type="text" th:field="*{height}"/></p>-->
-<!--    <p>Następnie kliknij <input type="submit" value="   Enter   "/></p>-->
-<!--    <p>Wyczyść okno <input type="reset" value="  Reset  "></p>-->
+
+    <!-- <form>
+        <div class="form-group row">
+            <label for="exampleFormControlInput1">Waga</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Podaj swoją wagę">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="exampleFormControlInput1">Wzrost</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Podaj swój wzrost">
+            </div>
+        </div>
+
+        <fieldset class="form-group">
+            <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                        <label class="form-check-label" for="gridRadios1">
+                            First radio
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                        <label class="form-check-label" for="gridRadios2">
+                            Second radio
+                        </label>
+                    </div>
+                    <div class="form-check disabled">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+                        <label class="form-check-label" for="gridRadios3">
+                            Third disabled radio
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
+        </div>
+    </form> -->
 
 
-<form method="post">
-    <div>Waga</div>
-    <input type="text" name="weight">
-    <div>Wzrost</div>
-    <input type="text" name="height">
-    <div>Płeć</div>
-    <select name="sex">
-        <option value="female">Kobieta</option>
-        <option value="male">Mężczyzna</option>
 
-    </select>
-    <input type="submit" value="OK">
-</form>
+    <form method="POST">
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Waga</label>
+            <div class="col-sm-10">
+                <input type="text" name="weight" class="form-control" placeholder="Podaj swoją wagę">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Wzrost</label>
+            <div class="col-sm-10">
+                <input type="text" name="height" class="form-control" placeholder="Podaj swój wzrost">
+            </div>
+        </div>
+
+        <fieldset class="form-group">
+            <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0">Płeć</legend>
+                <div class="col-sm-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sex" value="option1" checked>
+                        <label class="form-check-label">
+                            Kobieta
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sex" value="option2">
+                        <label class="form-check-label">
+                            Mężczyzna
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Oblicz</button>
+            </div>
+        </div>
+    </form>
+
+
+
 
 
 </body>
+
 </html>
