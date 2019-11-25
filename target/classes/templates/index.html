@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator BMI</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div>Udało się!</div>
+
+
+<!--<form th:action="@{index}" th:object="${person}" method="post">-->
+<!--    <p>Podaj wagę: <input type="text" th:field="*{weight}"/></p>-->
+<!--    <p>Podaj wzrost: <input type="text" th:field="*{height}"/></p>-->
+<!--    <p>Następnie kliknij <input type="submit" value="   Enter   "/></p>-->
+<!--    <p>Wyczyść okno <input type="reset" value="  Reset  "></p>-->
+
+
+<form method="post">
+    <div>Waga</div>
+    <input type="text" name="weight">
+    <div>Wzrost</div>
+    <input type="text" name="height">
+    <div>Płeć</div>
+    <select name="sex">
+        <option value="female">Kobieta</option>
+        <option value="male">Mężczyzna</option>
+
+    </select>
+    <input type="submit" value="OK">
+</form>
+
+
+</body>
+</html>

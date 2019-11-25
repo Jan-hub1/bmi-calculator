@@ -9,6 +9,6 @@ public class PersonsRepository {
     private static List<Person> personsList = new ArrayList<>();
 
     static {
-        Person p1 = new Person(1, "male", 1.75, 70, 20);
+        Person p1 = new Person(1, 70, 1.75, "male", 20);
     }
 }
