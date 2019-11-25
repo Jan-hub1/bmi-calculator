@@ -32,4 +32,8 @@ public class PersonsRepository {
         }
         return true;
     }
+
+    public static void addPersonToList(Person person) {
+        personsList.add(person);
+    }
 }

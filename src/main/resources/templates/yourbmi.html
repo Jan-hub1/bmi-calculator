@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
-          th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}"
-          rel="stylesheet" media="screen"/>
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/4.3.1/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
 
-    <script src="http://cdn.jsdelivr.net/webjars/jquery/3.4.1/jquery.min.js"
-            th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/3.4.1/jquery.min.js" th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
 
@@ -18,9 +15,11 @@
     <title>Twój wskaźnik BMI</title>
 
 </head>
+
 <body>
-<div>Udało się!</div>
-    <div th:text="'Twój wskaźnik BMI: ' + ${bmiResult}"/>
-</div>
+        <div th:text="'Twój wskaźnik BMI: ' + ${bmiResult.sex}" />
+        <div th:text="'Twój wskaźnik BMI: ' + ${bmiResult.bmi}" />
+        <div th:text="'Twoje ID: ' + ${bmiResult.id}"/>
 </body>
+
 </html>
