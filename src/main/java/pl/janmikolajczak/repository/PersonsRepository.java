@@ -14,11 +14,11 @@ public class PersonsRepository {
         personsList.add(p1);
     }
 
-    public static List<Person> getPersonById(int id) {
-        List<Person> result = new ArrayList<>();
+    public static Person getPersonById(int id) {
+        Person result = new Person();
         for (Person person : personsList) {
             if (person.getId() == id) {
-                result.add(person);
+                result = person;
             }
         }
         return result;

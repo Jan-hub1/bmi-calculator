@@ -20,7 +20,7 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.POST)
+    @RequestMapping(value = "/add-person-bmi", method = RequestMethod.POST)
     public String calculateBmi(@RequestParam() double weight, @RequestParam() double height,
                                @RequestParam() String sex, Model model) {
 
@@ -40,10 +40,9 @@ public class MainController {
         return "yourbmi";
     }
 
-//    @RequestMapping( value = "/", method = RequestMethod.POST)
-//    public String searchById(@RequestParam int personId, Model model) {
-//        List<Person> personByIdList = PersonsRepository.getPersonById(personId);
-//        model.addAttribute("personById", personByIdList);
-//        return "result";
-//    }
+    @RequestMapping(value = "/search-for-id", method = RequestMethod.GET)
+    public String searchById(@RequestParam int personId, Model model) {
+        model.addAttribute("bmiResult", PersonsRepository.getPersonById(personId));
+        return "yourbmi";
+    }
 }

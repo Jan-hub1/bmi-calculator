@@ -15,6 +15,9 @@ public class Person {
         this.bmi = bmi;
     }
 
+    public Person() {
+    }
+
     public int getId() {
         return id;
     }
