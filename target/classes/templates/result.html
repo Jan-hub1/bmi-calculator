@@ -40,17 +40,17 @@
 
     <div class="card" style="width: 18rem;">
         <div class="card-header">
-            Wynik
+            Twoje dane
         </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
-                <div th:text="'BMI: ' + ${bmiResult.bmi}" />
+                <div th:text="'BMI: ' + ${personById.bmi}" />
             </li>
             <li class="list-group-item">
-                <div th:text="${bmiResult.sex}" />
+                <div th:text="${personById.sex}" />
             </li>
             <li class="list-group-item">
-                <div th:text="'Twoje ID: ' + ${bmiResult.id}" />
+                <div th:text="'Twoje ID: ' + ${personById.id}" />
             </li>
         </ul>
     </div>
