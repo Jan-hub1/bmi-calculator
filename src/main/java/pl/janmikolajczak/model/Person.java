@@ -1,21 +1,20 @@
 package pl.janmikolajczak.model;
 
+import java.math.BigDecimal;
+
 public class Person {
     private int id;
-    private double height;
-    private double weight;
+    private BigDecimal height;
+    private BigDecimal weight;
     private String sex;
-    private double bmi;
+    private BigDecimal bmi;
 
-    public Person(int id, double height, double weight, String sex, double bmi) {
+    public Person(int id, BigDecimal height, BigDecimal weight, String sex, BigDecimal bmi) {
         this.id = id;
         this.height = height;
         this.weight = weight;
         this.sex = sex;
         this.bmi = bmi;
-    }
-
-    public Person() {
     }
 
     public int getId() {
@@ -26,19 +25,19 @@ public class Person {
         this.id = id;
     }
 
-    public double getHeight() {
+    public BigDecimal getHeight() {
         return height;
     }
 
-    public void setHeight(double height) {
+    public void setHeight(BigDecimal height) {
         this.height = height;
     }
 
-    public double getWeight() {
+    public BigDecimal getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
+    public void setWeight(BigDecimal weight) {
         this.weight = weight;
     }
 
@@ -50,11 +49,11 @@ public class Person {
         this.sex = sex;
     }
 
-    public double getBmi() {
+    public BigDecimal getBmi() {
         return bmi;
     }
 
-    public void setBmi(double bmi) {
+    public void setBmi(BigDecimal bmi) {
         this.bmi = bmi;
     }
 }
