@@ -4,17 +4,28 @@ import java.math.BigDecimal;
 
 public class Person {
     private int id;
-    private BigDecimal height;
-    private BigDecimal weight;
+    private Long height;
+    private Long weight;
     private String sex;
     private BigDecimal bmi;
 
-    public Person(int id, BigDecimal height, BigDecimal weight, String sex, BigDecimal bmi) {
+    public Person(int id, Long height, Long weight, String sex, BigDecimal bmi) {
         this.id = id;
         this.height = height;
         this.weight = weight;
         this.sex = sex;
         this.bmi = bmi;
+    }
+
+    public Person(int id, Long height, Long weight, String sex) {
+        this.id = id;
+        this.height = height;
+        this.weight = weight;
+        this.sex = sex;
+    }
+
+    public Person() {
+
     }
 
     public int getId() {
@@ -25,19 +36,19 @@ public class Person {
         this.id = id;
     }
 
-    public BigDecimal getHeight() {
+    public Long getHeight() {
         return height;
     }
 
-    public void setHeight(BigDecimal height) {
+    public void setHeight(Long height) {
         this.height = height;
     }
 
-    public BigDecimal getWeight() {
+    public Long getWeight() {
         return weight;
     }
 
-    public void setWeight(BigDecimal weight) {
+    public void setWeight(Long weight) {
         this.weight = weight;
     }
 

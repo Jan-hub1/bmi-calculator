@@ -9,6 +9,7 @@ import pl.janmikolajczak.model.Person;
 import pl.janmikolajczak.repository.PersonsRepository;
 import pl.janmikolajczak.service.CalculateBmi;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Random;
 
@@ -21,7 +22,7 @@ public class MainController {
     }
 
     @RequestMapping(value = "/add-person-bmi", method = RequestMethod.POST)
-    public String calculateBmi(@RequestParam() double weight, @RequestParam() double height,
+    public String calculateBmi(@RequestParam() Long weight, @RequestParam() Long height,
                                @RequestParam() String sex, Model model) {
 
         while (true) {
@@ -29,9 +30,8 @@ public class MainController {
             int id = random.nextInt(9999);
             if (PersonsRepository.idCheck(id)) {
 
-                double bmiResult = CalculateBmi.yourBmi(weight, height, sex);
-
-                Person newPerson = new Person(id, height, weight, sex, bmiResult);
+                Person newPerson = new Person(id, height, weight, sex);
+                newPerson = CalculateBmi.yourBmi(newPerson);
                 PersonsRepository.addPersonToList(newPerson);
                 model.addAttribute("bmiResult", newPerson);
                 break;

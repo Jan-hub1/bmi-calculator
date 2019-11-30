@@ -9,9 +9,9 @@ public class PersonsRepository {
     private static List<Person> personsList = new ArrayList<>();
 
     static {
-        Person p1 = new Person(1, 175, 70, "Male", 20);
-
-        personsList.add(p1);
+//        Person p1 = new Person(1, 175, 70, "Male", 20);
+//
+//        personsList.add(p1);
     }
 
     public static Person getPersonById(int id) {
