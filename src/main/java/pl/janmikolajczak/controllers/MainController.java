@@ -8,9 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pl.janmikolajczak.model.Person;
 import pl.janmikolajczak.repository.PersonsRepository;
 import pl.janmikolajczak.service.CalculateBmi;
-
-import java.math.BigDecimal;
-import java.util.List;
 import java.util.Random;
 
 @Controller
