@@ -28,8 +28,6 @@ public class MainController {
     public String calculateBmi(@RequestParam() Long weight, @RequestParam() Long height,
                                @RequestParam() String sex, Model model) {
 
-
-
                 Person newPerson = new Person(11, height, weight, sex);
                 newPerson = CalculateBmi.yourBmi(newPerson);
                 this.calculatorService.savePerson(newPerson);
@@ -40,7 +38,7 @@ public class MainController {
 
     @RequestMapping(value = "/search-for-id", method = RequestMethod.GET)
     public String searchById(@RequestParam int personId, Model model) {
-        model.addAttribute("bmiResult", PersonsRepository.getPersonById(personId));
+        model.addAttribute("bmiResult", this.calculatorService.getPersonById(personId));
         return "yourbmi";
     }
 }
